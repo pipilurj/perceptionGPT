@@ -1,0 +1,3 @@
+python prepare_data/data_process_shikra.py --data_root ../data/refcoco --output_dir ../data/refcoco/shikra_mask --dataset refcoco --split unc --generate_mask
+python prepare_data/data_process_shikra.py --data_root ../data/refcoco --output_dir ../data/refcoco/shikra_mask --dataset refcoco+ --split unc --generate_mask
+python prepare_data/data_process_shikra.py --data_root ../data/refcoco --output_dir ../data/refcoco/shikra_mask --dataset refcocog --split umd --generate_mask
