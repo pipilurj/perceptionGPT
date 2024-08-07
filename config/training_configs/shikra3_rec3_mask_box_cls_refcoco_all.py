@@ -6,9 +6,7 @@ data_args = dict(
     train=dict(
         type='ConcatDataset',
         cfgs=[
-            # {{_base_.DEFAULT_TRAIN_DATASET.rec}},
             {{_base_.DEFAULT_TRAIN_DATASET.rec_mask_all}}
-            # {{_base_.DEFAULT_TRAIN_DATASET.recvg}},
         ],
     ),
     validation=None,
@@ -37,18 +35,17 @@ training_args = dict(
     do_eval=True,
     per_device_train_batch_size=8,
     lora_enable=False,
-    output_dir='./exp/shikra_mask_higher_resolution_separate_sam/shikra3_rec3_mask_box_cls_refcoco_all',
+    output_dir='./exp/perceptionGPT/',
 )
 
 model_args = dict(
-    type="shikra_mask_higher_resolution_separate_sam",
+    type="perceptionGPT",
     image_token_len=256,
     init_peft_inside=False,
     conv_args=dict(
         tokenize_kwargs=dict(truncation_size=4096),
     ),
-    # model_name_or_path="exp/shikra3_mask_direct_complex2/shikra3_rec3_mask_box_cls_refcoco_all_cont/ckpt_model",
-    model_name_or_path="../pretrained_weights/llava_7b",
+    model_name_or_path="path-to-LLaVA-ckpt",
     target_processor=dict(
         boxes=dict(type='UnifiedFormatter'),
     ),

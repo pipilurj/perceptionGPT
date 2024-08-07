@@ -11,21 +11,22 @@
 
 This repository contains the code for the paper titled "PerceptionGPT: Effectively Fusing Visual Perception into LLM". [[Link to our paper](https://arxiv.org/abs/2311.06612)]
 
-We are still cleaning the codebase, and the current version may contain bugs. Please stay tuned!
+[comment]: <> (We are still cleaning the codebase, and the current version may contain bugs. Please stay tuned!)
 
-[comment]: <> (## Install Packages)
+## Install Packages
+```
+conda create -n perceptiongpt python=3.10
+conda activate perceptiongpt
+pip install -r requirements.txt
+```
+## Model training with LoRA
+Before conducting training, organize the training dataset following [Shikra](https://github.com/shikras/shikra).
 
-[comment]: <> (```)
+The running config located in config/train_configs/shikra3_rec3_mask_box_cls_refcoco_all.py could be modified accordingly 
 
-[comment]: <> (conda create -n mllm_protector python=3.10 -y)
-
-[comment]: <> (conda activate mllm_protector)
-
-[comment]: <> (pip install -e .)
-
-[comment]: <> (```)
-
-[comment]: <> (## Download pretrained LLM)
+```
+bash script/run.sh
+```
 
 [comment]: <> (Obtain weights for llama-3B from [here]&#40;https://huggingface.co/openlm-research/open_llama_3b_v2&#41;)
 
